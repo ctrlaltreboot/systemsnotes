@@ -1,0 +1,40 @@
+tar -xzvf tarsnap-autoconf-1.0.36.1.tgz
+cd tarsnap-autoconf-1.0.36.1
+gpg --decrypt tarsnap-sigs-1.0.36.1.asc
+gpg --import tarsnap-signing-key-2015.asc
+gpg --decrypt tarsnap-sigs-1.0.36.1.asc
+shasum -256 tarsnap-autoconf-1.0.36.1
+shasum -256 tarsnap-autoconf-1.0.36.1.tgz
+shasum -a 256 tarsnap-autoconf-1.0.36.1.tgz
+gpg --decrypt tarsnap-sigs-1.0.36.1.asc
+cd tarsnap-autoconf-1.0.36.1
+tarsnap
+tarsnap --list-archives
+mv tarsnap.key ~/.tarsnap.key
+chmod 600 .tarsnap.key
+/tarsnap-backup.sh
+tarsnap --key-file tarsnap.key --list-archives
+tarsnap --keyfile tarsnap.key --list-archives
+tarsnap --keyfile tarsnap.key -d -f archive
+less /usr/local/etc/tarsnap.conf
+mkdir tarsnap
+mv tarsnap.key tarsnap.key tarsnap.key tarsnap-backup.sh tarsnap/
+mv tarsnap Workspace/ctrlaltreboot
+cd tarsnap
+mv tarsnap.key one.tarsnap.key
+cp tarsnap-backup.sh /usr/local/bin
+tarsnap --keyfile Workspace/tarsnap/tarsnap.key --list-archives
+man tarsnap
+sudo vim /usr/local/etc/tarsnap.conf
+tarsnap --keyfile Workspace/tarsnap/tarsnap.key --list-archives
+tarsnap -x -f archive --keyfile Workspace/tarsnap/tarsnap.key tarsnap --print-stats --humanize-numbers
+tarsnap --keyfile Workspace/tarsnap/tarsnap.key --print-stats --humanize-numbers -x -f archive tarsnap
+which tarsnap-backup
+cd tarsnap
+cat tarsnap-backup.sh
+cat tarsnap-backup.sh| pbcopy
+diff tarsnap.key ~/.tarsnap.key
+sudo chown user:staff tarsnap.key tarsnap
+sudo chown user:staff tarsnap.key tarsnap.key
+cp tarsnap-backup.sh /usr/local/sbin
+diff ~/.tarsnap.key tarsnap.key
